@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding-top: 20vh; /* Para evitar que el header tape el contenido */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Tres filas: header, contenido y footer */
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    background-color: #FED8B1;
+    overflow-x: hidden;
+}
+header {
+    height: 15vh;
+    width: 100%;
+    z-index: 99;
+    background-color: #A67B5B;
+    box-shadow: -2px 9px 31px -6px rgba(0,0,0,0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    grid-row: 1;
+}
+.logo-img {
+    height: 15vh;
+    margin-left: 40px;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.target {
+    background-color: #6F4E37;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    -webkit-box-shadow: -2px 0px 51px -5px rgba(0,0,0,0.69);
+-moz-box-shadow: -2px 0px 51px -5px rgba(0,0,0,0.69);
+box-shadow: -2px 0px 51px -5px rgba(0,0,0,0.69);
+    position: relative;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+}
+footer {
+    grid-row: 3; /* Coloca el footer en la tercera fila */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20vw;
+    background-color: #A67B5B;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px; /* Alineación vertical del texto */
+    position: relative;
+    width: 100%;
+}
+footer img {
+    height: 50px;
+    margin-right: 20px;
+}
