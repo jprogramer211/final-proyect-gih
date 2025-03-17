@@ -1,12 +1,14 @@
+/* CONFIGURACIÓN GENERAL */
 body {
     margin: 0;
-    padding-top: 20vh; /* Para evitar que el header tape el contenido */
-    display: grid;
-    grid-template-rows: auto 1fr auto; /* Tres filas: header, contenido y footer */
-    min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el footer quede abajo */
     background-color: #FED8B1;
-    overflow-x: hidden;
 }
+
+/* HEADER FIJO */
 header {
     height: 15vh;
     width: 100%;
@@ -16,50 +18,67 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* LOGO */
 .logo-img {
-    height: 15vh;
-    margin-left: 40px;
+    height: 12vh;
     min-height: 10vh;
+}
+
+/* MAIN -> Ocupa todo el espacio disponible */
+main {
+    flex: 1; /* Ocupa todo el espacio libre y empuja el footer hacia abajo */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 18vh; /* Para que no lo tape el header */
 }
-.logo {
+
+/* CONTENEDOR DE TARJETAS */
+.target-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap; /* Hace que pasen a la línea de abajo cuando no haya espacio */
+    justify-content: center; /* Centra las tarjetas */
+    align-items: flex-start; /* Permite que las tarjetas tengan alturas diferentes */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px;
+    max-width: 90vw; /* Para que no se expandan demasiado en pantallas grandes */
 }
+
+/* TARJETAS */
 .target {
     background-color: #6F4E37;
-    display: inline-block;
-    height: fit-content;
-    width: fit-content;
-    -webkit-box-shadow: -2px 0px 51px -5px rgba(0,0,0,0.69);
--moz-box-shadow: -2px 0px 51px -5px rgba(0,0,0,0.69);
-box-shadow: -2px 0px 51px -5px rgba(0,0,0,0.69);
-    position: relative;
     padding: 15px;
     border-radius: 10px;
     color: white;
-    margin-left: 20px;
-}
-footer {
-    grid-row: 3; /* Coloca el footer en la tercera fila */
+    box-shadow: -2px 0px 51px -5px rgba(0,0,0,0.69);
+    text-align: center;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 20vw;
+    flex-direction: column;
+    
+    /* ANCHO VARIABLE SEGÚN EL CONTENIDO */
+    width: auto; 
+    min-width: 200px; /* Mínimo para que no sean muy pequeñas */
+    max-width: 400px; /* Máximo para que no sean demasiado grandes */
+}
+
+/* FOOTER FIJO EN LA PARTE INFERIOR */
+footer {
     background-color: #A67B5B;
     color: white;
     text-align: center;
     height: 50px;
-    line-height: 50px; /* Alineación vertical del texto */
-    position: relative;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 footer img {
-    height: 50px;
-    margin-right: 20px;
+    height: 40px;
+    margin-right: 10px;
 }
