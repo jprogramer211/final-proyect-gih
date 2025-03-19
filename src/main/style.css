@@ -40,30 +40,28 @@ main {
 
 /* CONTENEDOR DE TARJETAS */
 .target-container {
-    display: flex;
-    flex-wrap: wrap; /* Hace que pasen a la línea de abajo cuando no haya espacio */
-    justify-content: center; /* Centra las tarjetas */
-    align-items: flex-start; /* Permite que las tarjetas tengan alturas diferentes */
-    gap: 20px; /* Espacio entre tarjetas */
-    padding: 20px;
-    max-width: 90vw; /* Para que no se expandan demasiado en pantallas grandes */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+    grid-template-rows: auto;
+    gap: 50px; /* Aumenté el espacio entre las tarjetas */
+    padding: 30px;
+    max-width: 90vw;
+    justify-content: center;
 }
 
 /* TARJETAS */
 .target {
     background-color: #6F4E37;
-    padding: 15px;
+    padding: 20px; /* Más espacio interno en las tarjetas */
     border-radius: 10px;
     color: white;
     box-shadow: -2px 0px 51px -5px rgba(0,0,0,0.69);
     text-align: center;
     display: flex;
     flex-direction: column;
-    
-    /* ANCHO VARIABLE SEGÚN EL CONTENIDO */
-    width: auto; 
-    min-width: 200px; /* Mínimo para que no sean muy pequeñas */
-    max-width: 400px; /* Máximo para que no sean demasiado grandes */
+    min-width: 220px;
+    max-width: 420px;
+    margin-top: 20px; /* Añadí margen superior para separar aún más las tarjetas */
 }
 
 /* FOOTER FIJO EN LA PARTE INFERIOR */
